@@ -35,11 +35,8 @@ if __name__ == '__main__':
 	#trainX, trainy, testX, testy = data['arr_0'], data['arr_1'], data['arr_2'], data['arr_3']
 	trainX, trainy = data['arr_0'], data['arr_1']
 	print('Loaded: ', trainX.shape, trainy.shape)#, testX.shape, testy.shape)
-	## load the facenet model
+	
 	model = load_model('model.h5')
-
-	## Vgg model
-	#model = load_model('vgg_face_weights.h5')
 
 	print('Loaded Model')
 
@@ -63,4 +60,4 @@ if __name__ == '__main__':
 
 	# save arrays to one file in compressed format	
 	#np.savez_compressed('faces-embeddings.npz', newTrainX, trainy, newTestX, testy)
-	np.savez_compressed('faces-embeddings_kamal.npz', newTrainX, trainy)
+	np.savez_compressed('faces-embeddings.npz', newTrainX, trainy)
