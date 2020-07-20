@@ -275,14 +275,3 @@ def face_align_cv(img_path):
         new_img = np.array(new_img.rotate(direction * angle))
 	
     return new_img
-
-def test_cv():
-    test_set = ['faces-dataset/train/kamal/02.jpg']
-    for instance in test_set:
-        alignedFace = face_align_cv(instance)
-        plt.imshow(alignedFace[:, :, ::-1])
-        plt.show()
-        cv2.imwrite('al4.jpg', alignedFace)
-        #img, gray_img = detectFace(alignedFace)
-        #plt.imshow(img[:, :, ::-1])
-        #plt.show()
