@@ -36,7 +36,7 @@ if __name__ == '__main__':
 	trainX, trainy = data['arr_0'], data['arr_1']
 	print('Loaded: ', trainX.shape, trainy.shape)#, testX.shape, testy.shape)
 	## load the facenet model
-	model = load_model('facenet_keras.h5')
+	model = load_model('model.h5')
 
 	## Vgg model
 	#model = load_model('vgg_face_weights.h5')
