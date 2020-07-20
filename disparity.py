@@ -69,12 +69,12 @@ def embedding():
     """
     get embeddings based on process_image
     """
-    pictures = "faces-dataset/train1/kamal/"
+    pictures = "faces-dataset/train1/ben/"
     names = dict()
-    model = load_model('facenet_keras.h5')
+    model = load_model('model.h5')
     for file in os.listdir(pictures):
         name, extension = file.split(".")
-        img = preprocess_image('faces-dataset/train1/kamal/%s.jpg' % (name))
+        img = preprocess_image('faces-dataset/train1/ben/%s.jpg' % (name))
         representation = model.predict(img)[0,:]
         names[name] = representation
 	
@@ -86,12 +86,12 @@ def embedding():
     print(f'disparity: {1 - sims}')
     return names
 
-def embedding2(alignd='faces-dataset/train1/kamal/', embd='faces-dataset/train1/kamal_aligned/'):
+def embedding2(alignd='faces-dataset/train1/ben/', embd='faces-dataset/train1/ben_aligned/'):
     """
-    get embeddings based on mtccn extraction and keras pretrained
+    get embeddings based on mtccn extraction and pretrained weights
     """
     face_align(alignd, embd)
-    model = load_model('facenet_keras.h5')
+    model = load_model('model.h5')
     names = dict()
     for filename in os.listdir(embd):
         name, extension = filename.split(".")
@@ -117,7 +117,7 @@ def plot():
     """
     function to plot the extracted faces and to check for alignment
     """
-    folder = 'faces-dataset/train1/kamal1/'
+    folder = 'faces-dataset/train1/ben/'
     i = 1
     for filename in os.listdir(folder):
 	    # path
