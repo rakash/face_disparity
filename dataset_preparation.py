@@ -16,7 +16,7 @@ if tf.test.gpu_device_name():
 else:
     print("No GPU found")
 
-model = load_model('facenet_keras.h5')
+model = load_model('model.h5')
 
 # summarize input and output shape
 
@@ -59,23 +59,6 @@ def extract_face(filename, required_size=(160, 160)):
 	face_array = asarray(image)
 	return face_array
 
-# specify folder to plot
-
-#folder = 'faces-dataset/train/ben_afflek/'
-#i = 1
-# enumerate files
-#for filename in os.listdir(folder):
-	# path
-#	path = folder + filename
-	# get face
-#	face = extract_face(path)
-#	print(i, face.shape)
-	# plot
-#	plt.subplot(2, 7, i)
-#	plt.axis('off')
-#	plt.imshow(face)
-#	i += 1
-#plt.show()
 
 def load_faces(directory):
 	"""
